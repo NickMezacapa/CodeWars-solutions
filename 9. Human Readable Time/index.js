@@ -34,3 +34,19 @@ const humanReadable = (seconds) => {
 	}
 	return `${hours}:${minutes}:${seconds}`;
 };
+
+///////////////////////////////////////
+// REFACTORED CLEANER SOLUTION BELOW //
+///////////////////////////////////////
+
+const humanReadable2 = (seconds) => {
+	let hours = parseInt(seconds / 3600);
+	let minutes = parseInt(seconds / 60) % 60;
+	let seconds = seconds % 60;
+
+	let pad = function (val) {
+		return val < 10 ? "0" + val : val;
+	};
+
+	return pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+};
