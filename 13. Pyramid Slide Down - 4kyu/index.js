@@ -19,5 +19,10 @@ Your task is to write a function that takes a pyramid representation as argument
 By the way...
 My tests include some extraordinarily high pyramids so as you can guess, brute-force method is a bad idea unless you have a few centuries to waste. You must come up with something more clever than that.
 
-
 */
+
+const longestSlideDown = pyramid => {
+    return pyramid.reduceRight((prev, curr) =>
+      curr.map((val, i) => val + Math.max(prev[i], prev[i + 1]))
+    )[0];
+  };
