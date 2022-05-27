@@ -35,13 +35,3 @@ const findOdd = (A) => {
 const findOdd2 = (arr) => {
 	return arr.find((item, index) => arr.filter((el) => el == item).length % 2);
 };
-
-////////////////////////////////
-//     Refactored Again      //
-//////////////////////////////
-
-const findOdd3 = (A) => {
-	return A.reduce(function (c, v) {
-		return c ^ v;
-	}, 0);
-};
