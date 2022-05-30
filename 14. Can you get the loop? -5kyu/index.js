@@ -8,29 +8,27 @@ node.next
 
 */
 
-function loop_size(node){
-    let size = 1;
-    let seenNode = getNodeInLoop(node); 
-    let pointer = seenNode.next; 
+function loop_size(node) {
+	let size = 1;
+	let seenNode = getNodeInLoop(node);
+	let pointer = seenNode.next;
 
-    while(pointer !== seenNode ){
-        size++; 
-        pointer = pointer.next;
-    }
+	while (pointer !== seenNode) {
+		size++;
+		pointer = pointer.next;
+	}
 
-    return size;
+	return size;
 }
 
-function getNodeInLoop(node){
-   let slow = node;
-   let fast = node.next;
+function getNodeInLoop(node) {
+	let slow = node;
+	let fast = node.next;
 
-//problem assumes there is always going to be a loop
-//so no need to check
-   while(slow !== fast){ 
-        slow = slow.next; //move by 1
-        fast = fast.next.next; //move by 2
-    }
+	while (slow !== fast) {
+		slow = slow.next; //move by 1
+		fast = fast.next.next; //move by 2
+	}
 
-  return slow; 
+	return slow;
 }
